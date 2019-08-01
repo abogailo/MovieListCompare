@@ -25,6 +25,7 @@ public class Parser {
 			int rank = count;
 			System.out.println(rank + " " + year + " " + title + " " + rating);
 
+			
 		}
 	}
 }
