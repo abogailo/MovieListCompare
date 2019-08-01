@@ -26,10 +26,4 @@ public class ScraperDAO {
 	  session.close();
 	  return scraper;
 	}
-	/*public Scraper getAllData() {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();	
-		Scraper scraperAll = session.selectMap(statement, parameter, mapKey)("com.abogailo.ScraperMapper.selectAllScraper");
-		session.close();
-	    return scraperAll;
-	}*/
 } 
