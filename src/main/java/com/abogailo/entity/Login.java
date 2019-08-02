@@ -8,7 +8,7 @@ public class Login {
 	private String pswd;
 
 	// Constructor
-	public Login(Integer person_id, String user_name, String pswd) {
+	public Login(int person_id, String user_name, String pswd) {
 		this.person_id = person_id;
 		this.user_name = user_name;
 		this.pswd = pswd;

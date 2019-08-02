@@ -15,7 +15,7 @@
 	<select id="selectUser" resultType="user" parameterType="int" resultMap="userResult">
 	    SELECT * from persons WHERE person_id = #{person_id}
 	</select>
-	<insert id="insertUser" parameterType="int"  keyProperty="id" useGeneratedKeys="true">
+	<insert id="insertUser" parameterType="user"  keyProperty="id" useGeneratedKeys="true">
 		INSERT into persons(person_id, last_name, first_name, state, city, dob, email) VALUES(#{person_id}, #{last_name}, #{first_name}, #{state}, #{city}, #{dob}, #{email}) 	    
 	</insert>
 	<update id="updateUser" parameterType="int">

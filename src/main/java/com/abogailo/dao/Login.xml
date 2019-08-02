@@ -11,7 +11,7 @@
 	<select id="selectLogin" resultType="user" parameterType="int" resultMap="loginResult">
 	    SELECT * from login WHERE person_id = #{person_id}
 	</select>
-	<insert id="insertLogin" parameterType="int"  keyProperty="id" useGeneratedKeys="true">
+	<insert id="insertLogin" parameterType="user"  keyProperty="id" useGeneratedKeys="true">
 		INSERT into login(person_id, user_name, pswd) VALUES (#{person_id}, #{user_name}, #{pswd}) 	    
 	</insert>
 	<update id="updateLogin" parameterType="int">

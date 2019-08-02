@@ -24,15 +24,15 @@ public class RunMybatis {
 		ScraperDAO scraperDAO = new ScraperDAO();
 		UserListDAO userListDAO = new UserListDAO();
 		
-	//	Scraper scraper = new Scraper(1, "Fuad", 2, 2, 2.0);
+	//Scraper scraper = new Scraper(1, "Fuad", 2, 2, 2.0);
 		//scraperDAO.save(scraper);
 		
 		
-    	//User user = new User(1,"hi","hi","hi","hi",date,"k");
-    	//userDAO.save(user);
+    	User user = new User(1,"hi","hi","hi","hi",date,"k");
+    	userDAO.save(user);
     	
-		Login login = new Login(14,"hmmmm","hmmm");
-		loginDAO.save(login);
+		//Login login = new Login(14,"hmmmm","hmmm");
+		//loginDAO.save(login);
 		
 		//UserList userlist = new UserList(1,1,1,1,1);
 		//userListDAO.save(userlist);
