@@ -2,43 +2,39 @@ package com.abogailo.controller;
 
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import com.abogailo.dao.ScraperDAO;
-import com.abogailo.entity.Scraper;
+import com.abogailo.dao.*;
+import com.abogailo.entity.*;
 
 public class RunMybatis {
 	public static void main(String[] args) throws IOException {
-		  /*ScraperDAO scraperDAO = new ScraperDAO();	
-		 //insert	
-		  Scraper scraper = new Scraper(null, null, null, null, null);
-		  scraper.setId(15);
-		  scraper.setTitle("Fuad goes to the Store");
-		  scraper.setReleaseYear(1978);
-		  scraper.setRating(8.0);
-		  scraperDAO.save(scraper);
-		  System.out.println("---Data saved---");
-		  
-		  //update
-		  scraper = new Scraper(1, "Fuad", 2, 2, 2.0);
-		  scraper.setId(1);
-		  scraper.setTitle("Fuad Didn't Make it to the Store");
-		  scraper.setReleaseYear(1979);
-		  scraper.setRating(5.0);
-		  scraperDAO.update(scraper);
-		  System.out.println("---Data updated---");
-		  
-		  //select
-		  scraper = scraperDAO.getData(13);
-		  System.out.println("Movie Id:"+ scraper.getId() + ", Movie Title:"+scraper.getTitle() +", Movie Released: "+scraper.getReleaseYear() + ", Movie Rating: " + scraper.getRating());
-		  //scraper = scraperDAO.getAllData();
-		  //delete
-		  scraperDAO.delete(1008);
-		  System.out.println("---Data deleted---");*/
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		
+		LoginDAO loginDAO = new LoginDAO();
+		UserDAO userDAO = new UserDAO();
 		ScraperDAO scraperDAO = new ScraperDAO();
-		Scraper scraper = new Scraper(1, "Fuad", 2, 2, 2.0);
-		scraperDAO.save(scraper);
+		UserListDAO userListDAO = new UserListDAO();
+		
+	//	Scraper scraper = new Scraper(1, "Fuad", 2, 2, 2.0);
+		//scraperDAO.save(scraper);
+		
+		
+    	//User user = new User(1,"hi","hi","hi","hi",date,"k");
+    	//userDAO.save(user);
+    	
+		Login login = new Login(14,"hmmmm","hmmm");
+		loginDAO.save(login);
+		
+		//UserList userlist = new UserList(1,1,1,1,1);
+		//userListDAO.save(userlist);
 	} 
 }

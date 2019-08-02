@@ -5,6 +5,9 @@
 <configuration>
   <typeAliases>
      <typeAlias type="com.abogailo.entity.Scraper" alias="scraper"/>
+     <typeAlias type="com.abogailo.entity.Login" alias="login"/>
+     <typeAlias type="com.abogailo.entity.UserList" alias="userList"/>
+     <typeAlias type="com.abogailo.entity.User" alias="user"/>
   </typeAliases>  
   <environments default="development">
     <environment id="development">
@@ -19,5 +22,8 @@
   </environments>
   <mappers>
     <mapper resource="com/abogailo/dao/Scraper.xml" />
+    <mapper resource="com/abogailo/dao/Login.xml" />
+    <mapper resource="com/abogailo/dao/UserList.xml" />
+    <mapper resource="com/abogailo/dao/User.xml" />
   </mappers>
 </configuration> 

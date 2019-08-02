@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.abogailo.dao.User" >
+<mapper namespace="com.abogailo.dao.Login" >
 	<resultMap id="loginResult" type="login">
 		<id property="person_id" column="person_id" />
 		<result property="user_name" column="user_name"/>
