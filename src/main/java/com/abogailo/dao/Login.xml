@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abogailo.dao.User" >
+	<resultMap id="loginResult" type="login">
+		<id property="person_id" column="person_id" />
+		<result property="user_name" column="user_name"/>
+		<result property="pswd" column="pswd"/>
+	</resultMap>
+	<select id="selectLogin" resultType="user" parameterType="int" resultMap="loginResult">
+	    SELECT * from login WHERE person_id = #{person_id}
+	</select>
+	<insert id="insertLogin" parameterType="int"  keyProperty="id" useGeneratedKeys="true">
+		INSERT into login(person_id, user_name, pswd) VALUES (#{person_id}, #{user_name}, #{pswd}) 	    
+	</insert>
+	<update id="updateLogin" parameterType="int">
+		UPDATE login SET user_name = #{user_name}, pswd = #{pswd} WHERE person_id = #{person_id}  	    
+	</update> 
+	<delete id="deleteLogin" parameterType="int">
+		DELETE FROM login WHERE person_id = #{person_id}  	    
+	</delete>
+</mapper> 

@@ -2,9 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.abogailo.ScraperMapper" >
+<mapper namespace="com.abogailo.dao.Scraper" >
 	<resultMap id="scraperResult" type="scraper">
 		<id property="movie_id" column="movie_id" />
+		<result property="movie_rank" column="movie_rank"/>
 		<result property="movie_title" column="movie_title"/>
 		<result property="movie_release" column="movie_release"/>
 		<result property="movie_rating" column="movie_rating"/>
@@ -12,14 +13,11 @@
 	<select id="selectScraper" resultType="scraper" parameterType="int" resultMap="scraperResult">
 	    SELECT * from movies WHERE movie_id = #{movie_id}
 	</select>
-	<!-- <select id="selectAllScraper" resultType="scraper" parameterType="int" resultMap="scraperResult">
-		SELECT * from movies
-	</select> -->
 	<insert id="insertScraper" parameterType="scraper"  keyProperty="id" useGeneratedKeys="true">
-		INSERT into movies(movie_id, movie_release, movie_rating, movie_title) VALUES(#{movie_id}, #{movie_release}, #{movie_rating}, #{movie_title}) 	    
+		INSERT into movies(movie_id, movie_rank, movie_title, movie_release, movie_rating) VALUES(#{movie_id}, #{movie_rank}, #{movie_title}, #{movie_release}, #{movie_rating}) 	    
 	</insert>
 	<update id="updateScraper" parameterType="scraper">
-		UPDATE movies SET movie_release = #{movie_release}, movie_rating = #{movie_rating}, movie_title = #{movie_title} WHERE movie_id =#{movie_id}  	    
+		UPDATE movies SET  movie_rank = #{movie_rank}, movie_title = #{movie_title}, movie_release = #{movie_release}, movie_rating = #{movie_rating} WHERE movie_id =#{movie_id}  	    
 	</update> 
 	<delete id="deleteScraper" parameterType="int">
 		DELETE FROM movies WHERE movie_id =#{movie_id}  	    

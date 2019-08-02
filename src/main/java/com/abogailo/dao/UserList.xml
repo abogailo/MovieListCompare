@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abogailo.dao.UserList" >
+	<resultMap id="userList" type="userlist">
+		<id property="list_num" column="list_num" />
+		<result property="personal_rank" column="personal_rank"/>
+		<result property="movie_id" column="movie_id"/>
+		<result property="person_id" column="person_id"/>
+		<result property="movie_rating" column="movie_rating"/>
+	</resultMap>
+	<select id="selectUserList" resultType="userlist" parameterType="int" resultMap="userList">
+	    SELECT * from movielist WHERE list_num = #{list_num}
+	</select>
+	<insert id="insertUserList" parameterType="int"  keyProperty="id" useGeneratedKeys="true">
+		INSERT into movielist(list_num, person_id, movie_id, personal_rank, movie_rating) VALUES(#{list_num}, #{person_id}, #{movie_id}, #{personal_rank}, #{movie_rating}) 	    
+	</insert>
+	<update id="updateUserList" parameterType="int">
+		UPDATE movielist SET  movie_rank = #{movie_rank}, movie_title = #{movie_title}, movie_release = #{movie_release}, movie_rating = #{movie_rating} WHERE movie_id =#{movie_id}  	    
+	</update> 
+	<delete id="deleteUserList" parameterType="int">
+		DELETE FROM movielist WHERE list_num =#{list_num}  	    
+	</delete>
+</mapper> 

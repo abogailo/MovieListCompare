@@ -1,5 +1,5 @@
 
-package com.abogailo;
+package com.abogailo.util;
 import java.io.IOException;
 import java.io.InputStream;
 import org.apache.ibatis.io.Resources;

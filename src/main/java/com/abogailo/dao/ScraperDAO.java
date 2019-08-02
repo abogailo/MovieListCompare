@@ -1,12 +1,14 @@
-package com.abogailo;
+package com.abogailo.dao;
 import org.apache.ibatis.session.SqlSession;
+import com.abogailo.entity.*;
+import com.abogailo.util.MyBatisUtil;
 
 public class ScraperDAO {
 	public void save(Scraper scraper){
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();	
-		  session.insert("com.abogailo.ScraperMapper.insertScraper", scraper);
-		  session.commit();
-		  session.close();
+	  SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();	
+	  session.insert("com.abogailo.ScraperMapper.insertScraper", scraper);
+	  session.commit();
+	  session.close();
 	}
 	public void update(Scraper scraper){
 	  SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();	

@@ -1,22 +1,22 @@
-package com.abogailo;
+package com.abogailo.entity;
 
 
-class Scraper {
+public class Scraper {
 	//POJO 
 	
 	private Integer movie_id;
 	private String movie_title;
 	private Integer movie_rank;
 	private Integer movie_release;
-	private Integer movie_rating;
+	private Double movie_rating;
 	
 	//Constructor
-	 public Scraper(Integer movie_id, String movie_title, Integer movie_rank, Integer movie_release, Integer movie_rating) {
+	 public Scraper(Integer movie_id, String movie_title, Integer movie_rank, Integer movie_release, Double rating) {
 	        this.movie_id = movie_id;
 	        this.movie_title = movie_title;
 	        this.movie_rank = movie_rank;
 	        this.movie_release = movie_release;
-	        this.movie_rating = movie_rating;
+	        this.movie_rating = rating;
 	    }
 	
 	 //getters and setters
@@ -48,10 +48,10 @@ class Scraper {
 		this.movie_release = movie_release;
 	}
 	
-	public Integer getRating() {
+	public Double getRating() {
 		return movie_rating;
 	}
-	public void setRating(Integer movie_rating) {
+	public void setRating(Double movie_rating) {
 		this.movie_rating = movie_rating;
 	}
 } 

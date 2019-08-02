@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abogailo.dao.User" >
+	<resultMap id="userResult" type="user">
+		<id property="person_id" column="person_id" />
+		<result property="last_name" column="last_name"/>
+		<result property="first_name" column="first_name"/>
+		<result property="state" column="state"/>
+		<result property="city" column="city"/>
+		<result property="dob" column="dob"/>
+		<result property="email" column="email"/>
+	</resultMap>
+	<select id="selectUser" resultType="user" parameterType="int" resultMap="userResult">
+	    SELECT * from persons WHERE person_id = #{person_id}
+	</select>
+	<insert id="insertUser" parameterType="int"  keyProperty="id" useGeneratedKeys="true">
+		INSERT into persons(person_id, last_name, first_name, state, city, dob, email) VALUES(#{person_id}, #{last_name}, #{first_name}, #{state}, #{city}, #{dob}, #{email}) 	    
+	</insert>
+	<update id="updateUser" parameterType="int">
+		UPDATE persons SET last_name = #{last_name}, first_name = #{first_name}, state = #{state}, city = #{city}, dob = #{dob}, email = #{email} WHERE person_id =#{person_id}  	    
+	</update> 
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM persons WHERE person_id =#{person_id}  	    
+	</delete>
+</mapper> 

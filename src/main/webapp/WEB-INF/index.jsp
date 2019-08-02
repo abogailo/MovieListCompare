@@ -1,6 +1,6 @@
 
+<%@ page import="com.abogailo.dao.*"%>
 <%@ page import="com.abogailo.*"%>
-
 <html>
 <body>
 <h2>A Random Movie!</h2>
@@ -11,7 +11,6 @@
 
 	ScraperDAO scraperDAO = new ScraperDAO();	
 
-	Scraper scraper = new Scraper();
 
 	scraper = scraperDAO.getData(movie_id);
 
