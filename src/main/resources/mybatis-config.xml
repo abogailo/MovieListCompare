@@ -16,7 +16,7 @@
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost/abogailo"/>
         <property name="username" value="root"/>
-        <property name="password" value="Tripp19$"/>
+        <property name="password" value="***19***"/>
       </dataSource>
     </environment>
   </environments>
